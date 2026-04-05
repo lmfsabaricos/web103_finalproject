@@ -2,7 +2,7 @@
 
 CodePath WEB103 Final Project
 
-Designed and developed by: [your names here]
+Designed and developed by: Sodiq Balogun, Mary Odetayo, Louis Miguel Sabaricos, Xuewen Yao
 
 🔗 Link to deployed app:
 
