@@ -45,9 +45,9 @@ Backend: Express.js
 
 [gif goes here]
 
-### [Flower Shops]
-
-[Users can find flower shops in their area if they wish to purchase flowers instead of grow them]
+### [Flower Scanner]
+ 
+[Users can find flowers around them and scan it to find out information about them]
 
 [gif goes here]
 
@@ -63,9 +63,9 @@ Backend: Express.js
 
 [gif goes here]
 
-## [Favorites and collections]
+## [Flower page]
 
-[Users can store flowers they like and create a collections for themes like weddings, blue flowers, or parties]
+[Users can view flowers on individual pages that will give more information about the flower]
 
 [gif goes here]
 
