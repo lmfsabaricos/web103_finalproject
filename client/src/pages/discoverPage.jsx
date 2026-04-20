@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import '../Pages_css/discoverPage.css';
 
+const PER_PAGE = 30;
+
 const DiscoverPage = () => {
     const [searchParams] = useSearchParams();
     const [flowers, setFlowers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const searchQuery = searchParams.get('search') || '';
 
     useEffect(() => {
         setIsLoading(true);
+        setCurrentPage(1);
         const url = searchQuery
             ? `/api/flowers?search=${encodeURIComponent(searchQuery)}`
             : '/api/flowers';
@@ -21,6 +25,9 @@ const DiscoverPage = () => {
             .catch(err => console.error('Error fetching flowers:', err))
             .finally(() => setIsLoading(false));
     }, [searchQuery]);
+
+    const totalPages = Math.ceil(flowers.length / PER_PAGE);
+    const pageFlowers = flowers.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
     return (
         <main className="discover-page">
@@ -35,7 +42,7 @@ const DiscoverPage = () => {
             )}
 
             <div className="flower-grid">
-                {flowers.map(flower => (
+                {pageFlowers.map(flower => (
                     <Link
                         key={flower.id}
                         to={`/gallery/${flower.id}`}
@@ -60,6 +67,28 @@ const DiscoverPage = () => {
                     </Link>
                 ))}
             </div>
+
+            {totalPages > 1 && (
+                <div className="pagination">
+                    <button
+                        className="pagination-btn"
+                        onClick={() => setCurrentPage(p => p - 1)}
+                        disabled={currentPage === 1}
+                    >
+                        ← Prev
+                    </button>
+                    <span className="pagination-info">
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        className="pagination-btn"
+                        onClick={() => setCurrentPage(p => p + 1)}
+                        disabled={currentPage === totalPages}
+                    >
+                        Next →
+                    </button>
+                </div>
+            )}
         </main>
     );
 };

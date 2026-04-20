@@ -8,7 +8,7 @@
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    margin: 32px 0 24px;
+    margin: 8px 0 24px;
 }
 
 .discover-status {
@@ -89,6 +89,41 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 36px;
+}
+
+.pagination-btn {
+    padding: 8px 20px;
+    border: 2px solid #111;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #3f94b3;
+    color: #fff;
+    border-color: #3f94b3;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.pagination-info {
+    font-size: 1rem;
+    color: #2f3335;
 }
 
 @media (max-width: 640px) {
