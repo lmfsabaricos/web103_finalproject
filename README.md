@@ -27,11 +27,11 @@ Backend: Express.js
 
 ## Features
 
-### [Mood-based discovery]
+### [✅ Discovery Page]
 
-[Users can search for flowers that have certain meanings they are looking for, comfort, celebration, love ]
+[Users can search or browse for flowers that they are loooking to grow or learn more about ]
 
-[gif goes here]
+[]
 
 ### [How to grow guide]
 
@@ -39,7 +39,7 @@ Backend: Express.js
 
 [gif goes here]
 
-### [Flower Gallery]
+### [✅Flower Gallery]
 
 [Users can store flowers they see around them to find out more information about it later, or flowers they grow in their garden to show their progress]
 
@@ -51,9 +51,9 @@ Backend: Express.js
 
 [gif goes here]
 
-### [Floriography dictionary]
+### [✅Floriography dictionary]
 
-[Users can look up the flower language for flowers on the app and the different meaning by regions]
+[Users can look up the flower language for flowers on the app]
 
 [gif goes here]
 
@@ -63,7 +63,7 @@ Backend: Express.js
 
 [gif goes here]
 
-## [Flower page]
+## [✅Flower page]
 
 [Users can view flowers on individual pages that will give more information about the flower]
 
