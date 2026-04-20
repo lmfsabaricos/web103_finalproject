@@ -1,4 +1,4 @@
-<img width="2914" height="1647" alt="discover" src="https://github.com/user-attachments/assets/eb73d5f1-06e6-4449-8b59-0b27fab424ae" />
+
 # [FlowerHunt]
 
 CodePath WEB103 Final Project
