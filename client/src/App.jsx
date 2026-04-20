@@ -1,12 +1,13 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Link, useRoutes} from 'react-router';
+import { useRoutes} from 'react-router';
 import AboutPage from './pages/aboutPage';
 import HomePage from './pages/homePage';
 import FlowerDictionary from './pages/flowerDictionary';
 import ScanAFlower from './pages/scanAFlower';
 import FlowerGallery from './pages/flowerGallery';
 import DiscoverPage from './pages/discoverPage';
+import IndividualFlowerPage from './pages/individualFlowerPage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
@@ -26,7 +27,8 @@ const App = () => {
         { path: '/discover', element: <DiscoverPage /> },
         { path: '/dictionary', element: <FlowerDictionary /> },
         { path: '/scan', element: <ScanAFlower /> },
-        { path: '/gallery', element: <FlowerGallery /> }
+        { path: '/gallery', element: <FlowerGallery /> },
+        { path: '/gallery/:flowerId', element: <IndividualFlowerPage flowers={flowers} /> }
 
     ]);
 
