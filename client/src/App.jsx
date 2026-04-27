@@ -8,6 +8,7 @@ import ScanAFlower from './pages/scanAFlower';
 import FlowerGallery from './pages/flowerGallery';
 import DiscoverPage from './pages/discoverPage';
 import IndividualFlowerPage from './pages/individualFlowerPage';
+import AuthPage from './pages/AuthPage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
@@ -30,6 +31,7 @@ const App = () => {
         { path: '/gallery', element: <FlowerGallery /> },
         { path: '/gallery/:flowerId', element: <IndividualFlowerPage flowers={flowers} /> },
         { path: '/discover/:flowerId', element: <IndividualFlowerPage flowers={flowers} /> }
+        { path: '/login', element: <AuthPage /> }
 
     ]);
 
