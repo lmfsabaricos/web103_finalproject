@@ -53,6 +53,14 @@ const buildBaseQuery = ({ page, color, bloomMonth, growthHabit, sortBy, sortDir 
   return params;
 };
 
+const buildSearchQuery = ({ page, search }) => {
+  const params = new URLSearchParams();
+  params.set("token", TREFLE_TOKEN);
+  params.set("q", search);
+  if (page) params.set("page", String(page));
+  return params;
+};
+
 const fetchJson = async (url) => {
   const response = await fetch(url);
   const json = await response.json();
@@ -65,17 +73,19 @@ const fetchJson = async (url) => {
 
 export const fetchDiscoverFlowers = async (query = {}) => {
   ensureToken();
-  const params = buildBaseQuery(query);
-  const endpoint = "plants";
-  const url = `${TREFLE_BASE}/${endpoint}?${params.toString()}`;
+  let url;
+  if (query.search) {
+    const params = buildSearchQuery(query);
+    url = `${TREFLE_BASE}/plants/search?${params.toString()}`;
+  } else {
+    const params = buildBaseQuery(query);
+    url = `${TREFLE_BASE}/plants?${params.toString()}`;
+  }
   const json = await fetchJson(url);
   const mappedFlowers = (json.data ?? []).map(toFlowerCard);
-  const filteredFlowers = query.search
-    ? mappedFlowers.filter((flower) => matchesSearchQuery(flower, query.search))
-    : mappedFlowers;
 
   return {
-    data: filteredFlowers,
+    data: mappedFlowers,
     links: json.links ?? {},
     meta: json.meta ?? {},
   };
